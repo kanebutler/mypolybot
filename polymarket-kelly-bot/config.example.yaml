@@ -1,0 +1,30 @@
+# Polymarket Kelly Bot Configuration
+# Copy to config.yaml and fill in your values
+
+safe_address: "0x0000000000000000000000000000000000000000"
+rpc_url: "https://polygon-rpc.com"
+
+clob:
+  host: "https://clob.polymarket.com"
+  chain_id: 137
+  signature_type: 2  # Gnosis Safe
+
+relayer:
+  host: "https://relayer-v2.polymarket.com"
+  tx_type: "SAFE"
+
+# Builder Program Credentials (for gasless trading)
+# Apply at: polymarket.com/settings?tab=builder
+builder:
+  api_key: ""
+  api_secret: ""
+  api_passphrase: ""
+
+# Kelly Criterion Settings
+kelly:
+  fraction: 0.25       # 1/4 Kelly (standard). Use 0.5 for aggressive, 0.125 for conservative
+  min_edge: 0.03       # Minimum 3% edge to place a trade
+  max_fraction: 0.15   # Never risk more than 15% of bankroll on one trade
+  min_bet: 2.0         # Minimum bet size in USDC
+
+default_size: 1.0
